@@ -1,6 +1,9 @@
 import React from "react";
 import {useQuery, gql} from "@apollo/client";
 import styled from "styled-components";
+//COMPONENTS
+
+import Instagram from '../components/instagram'
 //IMAGES
 import underline from "../assets/underline_alt_1.png";
 import underline2 from "../assets/underline2.png";
@@ -145,7 +148,7 @@ function Home(props) {
           <Text1>{content.block2Raw[0].children[0].text}</Text1>
           <br></br>
           {content.specialities.map((work) => (
-            <li style={{marginLeft: "20px"}}>{work}</li>
+            <li key={work} style={{marginLeft: "20px"}}>{work}</li>
           ))}
           <br></br>
           <Text1>{content.block2AndAHalfRaw[0].children[0].text}</Text1>
@@ -186,7 +189,7 @@ function Home(props) {
           <Text1>{content.block4Raw[0].children[0].text}</Text1>
           <br></br>
           {content.weedingSpecialities.map((work) => (
-            <li style={{marginLeft: "20px"}}>{work}</li>
+            <li key={work} style={{marginLeft: "20px"}}>{work}</li>
           ))}
           <br></br>
         </div>
@@ -283,6 +286,7 @@ function Home(props) {
           <img src={content.image7.asset.url} alt="third" />
         </Image1>
       </BlockLeftWithImage2>
+      <Instagram/>
     </Container>
   );
 }
