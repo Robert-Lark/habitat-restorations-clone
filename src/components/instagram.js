@@ -6,7 +6,7 @@ import axios from 'axios'
 function Instagram(props) {
 
 useEffect(() => {
-    axios.get('https://api.instagram.com/oauth/authorize?client_id=839943530261406&redirect_uri=https://loving-mcclintock-637b40.netlify.app/&scope=user_profile,user_media&response_type=code')
+    axios.get('https://api.instagram.com/oauth/authorize?client_id=212718760471082&redirect_uri=https://loving-mcclintock-637b40.netlify.app/&scope=user_profile,user_media&response_type=code')
   .then(function (response) {
     console.log(response);
   })
