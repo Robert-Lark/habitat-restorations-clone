@@ -3,7 +3,7 @@ import {useQuery, gql} from "@apollo/client";
 import styled from "styled-components";
 //COMPONENTS
 
-import Instagram from '../components/instagram'
+import Instagram from "../components/instagram";
 //IMAGES
 import underline from "../assets/underline_alt_1.png";
 import underline2 from "../assets/underline2.png";
@@ -114,6 +114,7 @@ function Home(props) {
         <Text0>{content.block0Raw[1].children[0].text}</Text0>
         <br></br>
         <br></br>
+        <Button><h4>Find out more</h4></Button>
         <Image0>
           <img src={content.image0.asset.url} alt="first" />
         </Image0>
@@ -148,7 +149,9 @@ function Home(props) {
           <Text1>{content.block2Raw[0].children[0].text}</Text1>
           <br></br>
           {content.specialities.map((work) => (
-            <li key={work} style={{marginLeft: "20px"}}>{work}</li>
+            <li key={work} style={{marginLeft: "20px", fontFamily: "Noto Sans, Noto Sans CJK JP, sans-serif", fontSize: "1.2rem"}}>
+              {work}
+            </li>
           ))}
           <br></br>
           <Text1>{content.block2AndAHalfRaw[0].children[0].text}</Text1>
@@ -189,7 +192,9 @@ function Home(props) {
           <Text1>{content.block4Raw[0].children[0].text}</Text1>
           <br></br>
           {content.weedingSpecialities.map((work) => (
-            <li key={work} style={{marginLeft: "20px"}}>{work}</li>
+            <li key={work} style={{marginLeft: "20px", fontFamily: "Noto Sans, Noto Sans CJK JP, sans-serif", fontSize: "1.2rem"}}>
+              {work}
+            </li>
           ))}
           <br></br>
         </div>
@@ -222,7 +227,7 @@ function Home(props) {
       {/* FUNDING */}
 
       <BlockRight>
-        <div>
+        <div style={{marginLeft: "20px"}}>
           <Title1>
             {content.header6}
             <img src={underline6} alt="heading underline" />
@@ -240,6 +245,10 @@ function Home(props) {
 
       <BlockLeftWithImage>
         <InnerDiv>
+        <br>
+        </br>
+        <br>
+        </br>
           <Title1>
             {content.header7}
             <img src={underline} alt="heading underline" />
@@ -259,12 +268,21 @@ function Home(props) {
           <br></br>
           <img src={content.image4.asset.url} alt="third" />
         </Image1>
+        <br>
+        </br>
       </BlockLeftWithImage>
 
       {/* GLEN RILEY */}
 
       <BlockLeftWithImage2>
+
         <InnerDiv>
+        <br>
+        </br>
+        <br>
+        </br>
+        <br>
+        </br>
           <Title1>
             {content.header8}
             <img src={underline} alt="heading underline" />
@@ -283,10 +301,14 @@ function Home(props) {
           <br></br>
         </InnerDiv>
         <Image1>
+        <br>
+        </br>
+        <br>
+        </br>
           <img src={content.image7.asset.url} alt="third" />
         </Image1>
       </BlockLeftWithImage2>
-      <Instagram/>
+      <Instagram />
     </Container>
   );
 }
@@ -301,6 +323,7 @@ const BlockLeft = styled.div`
 `;
 const Title0 = styled.div`
   display: flex;
+  font-family: "Noto Sans", "Noto Sans CJK JP", sans-serif;
   flex-direction: column;
   padding: 0 5%;
   img {
@@ -311,21 +334,38 @@ const Title0 = styled.div`
 `;
 const Text0 = styled.div`
   padding: 0 5%;
+  font-family: "Noto Sans", "Noto Sans CJK JP", sans-serif;
+  font-size: 1.3rem;
+  color: #5e5866;
 `;
 const Image0 = styled.div`
   img {
+    margin-top: 35px;
     width: 99vw;
   }
 `;
-
+const Button = styled.button`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin-left: 65px; 
+background-color: #5E8947;
+color: white;
+font-size: 1.2rem;
+width: 15vw;
+height: 5vh;
+`
 const BlockRight = styled.div`
   text-align: left;
   background-color: #f2efea;
   display: flex;
   flex-direction: row-reverse;
+  padding: 4rem 100px;
 `;
 const Title1 = styled.div`
   display: flex;
+  font-family: "Noto Sans", "Noto Sans CJK JP", sans-serif;
   flex-direction: column;
   img {
     width: 15vw;
@@ -334,18 +374,25 @@ const Title1 = styled.div`
   font-size: 2rem;
 `;
 
-const Text1 = styled.div``;
+const Text1 = styled.div`
+  font-family: "Noto Sans", "Noto Sans CJK JP", sans-serif;
+  font-size: 1.3rem;
+  color: #5e5866;
+`;
 const Image1 = styled.div``;
 const BlockLeftWithImage = styled.div`
+  margin-top: 35px;
   background-color: #faf9f7;
   text-align: left;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding: 4rem 100px;
 `;
 const InnerDiv = styled.div`
   margin-top: -35px;
+  margin-left: 20px;
   width: 50vw;
   height: 45vh;
   display: flex;
@@ -360,6 +407,7 @@ const BlockLeftWithImage2 = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-top: 80px;
 `;
 
 export default Home;

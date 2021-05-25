@@ -1,26 +1,11 @@
-import React, { useEffect } from "react";
+import React from 'react';
 
-import axios from 'axios'
-
-
-function Instagram(props) {
-
-useEffect(() => {
-    axios.get('https://api.instagram.com/oauth/authorize?client_id=212718760471082&redirect_uri=https://loving-mcclintock-637b40.netlify.app/&scope=user_profile,user_media&response_type=code')
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-}, [])
-
-
-  return (
-    <div>
-      TEST
-    </div>
-  );
+function instagram(props) {
+    return (
+        <div>
+            
+        </div>
+    );
 }
 
-export default Instagram;
+export default instagram;
